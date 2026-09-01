@@ -61,7 +61,7 @@ export function Navbar() {
                                     <ul className="grid w-64 gap-1 p-3">
                                         {solutions.map((s)=>(
                                             <li key={s.href}>
-                                                <NavigationMenuLink>
+                                                <NavigationMenuLink asChild>
                                                     <Link href={s.href} className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-accent">
                                                         {s.title}
                                                     </Link>
@@ -85,7 +85,7 @@ export function Navbar() {
                                     <ul className="grid w-64 gap-1 p-3">
                                         {about.map((a)=>(
                                             <li key={a.href}>
-                                                <NavigationMenuLink>
+                                                <NavigationMenuLink asChild>
                                                     <Link href={a.href} className="block rounded-md px-3 py-2 text-sm text-foreground/80 hover:bg-accent">
                                                         {a.title}
                                                     </Link>
@@ -113,10 +113,8 @@ export function Navbar() {
 
                     {/* Mobile Menu */}
                     <Sheet>
-                        <SheetTrigger asChild className="md:hidden">
-                            <Button variant="ghost" size="icon" aria-label="Open menu">
-                                <Menu className="size-5" />
-                            </Button>
+                        <SheetTrigger className="md:hidden">
+                            <Menu className="size-5" />
                         </SheetTrigger>
                         <SheetContent side="right" className="bg-background">
                             <nav className="flex flex-col gap-2 mt-8" aria-label="Mobile navigation">

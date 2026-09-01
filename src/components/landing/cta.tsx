@@ -33,7 +33,14 @@ export function CTASection() {
         >
             <motion.div className="mx-auto grid max-w-6xl items-center gap-10 rounded-3xl bg-paper p-8 shadow-sm md:grid-cols-[1fr_1.4fr] md:p-10" variants={itemVariants}>
                 <div className="overflow-hidden rounded-2xl">
-                    <Image src="/images/students-tablet.png" alt="students using a tablet" className="h-56 w-full object-cover md:h-full" width={100} height={50}/>
+                    <Image 
+                        src="/images/students-tablet.png" 
+                        alt="students using a tablet" 
+                        className="h-56 w-full object-cover md:h-full" 
+                        width={560} 
+                        height={320}
+                        sizes="(max-width: 768px) 100vw, 480px"
+                    />
                 </div>
                 <div>
                     <h2 className="font-display text-3xl font-semibold text-forest md:text-4xl">
