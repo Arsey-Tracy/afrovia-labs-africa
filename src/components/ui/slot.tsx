@@ -3,27 +3,42 @@ import { cn } from "@/lib/utils"
 
 interface SlotProps extends React.HTMLAttributes<HTMLElement> {
   asChild?: boolean
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Slot = React.forwardRef<HTMLElement, SlotProps>(
-  ({ asChild, children, className, ...props }, ref) => {
+  ({ asChild = false, children, className, ...props }, ref) => {
     if (asChild) {
-      const Child = React.Children.only(children) as React.ReactElement<{ className?: string }>
-      const childProps = Child.props as { className?: string }
+      const child = React.Children.only(children)
 
-      const mergedProps = {
-        ...props,
-        ...childProps,
-        ref,
-        className: cn(className, childProps.className),
+      if (!React.isValidElement(child)) {
+        return null
       }
 
-      return React.cloneElement(Child, mergedProps)
+      const childProps = child.props as {
+        className?: string
+      }
+
+      return React.cloneElement(
+        child as React.ReactElement<Record<string, unknown>>,
+        {
+          ...props,
+          ...childProps,
+          ref,
+          className: cn(
+            className ?? "",
+            childProps.className ?? ""
+          ),
+        }
+      )
     }
 
     return (
-      <div ref={ref as React.Ref<HTMLDivElement>} className={className} {...props}>
+      <div
+        ref={ref as React.Ref<HTMLDivElement>}
+        className={className}
+        {...props}
+      >
         {children}
       </div>
     )
