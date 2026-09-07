@@ -129,6 +129,7 @@ interface NavigationMenuLinkProps extends NavigationMenuPrimitive.Link.Props {
 function NavigationMenuLink({
   className,
   asChild = false,
+  children,
   ...props
 }: NavigationMenuLinkProps) {
   const Comp = asChild ? Slot : NavigationMenuPrimitive.Link
@@ -141,7 +142,9 @@ function NavigationMenuLink({
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </Comp>
   )
 }
 

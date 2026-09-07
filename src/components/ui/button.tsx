@@ -50,6 +50,7 @@ function Button({
   variant = "default",
   size = "default",
   asChild = false,
+  children,
   ...props
 }: ButtonProps) {
   const Comp = asChild ? Slot : ButtonPrimitive
@@ -59,7 +60,9 @@ function Button({
       data-slot="button"
       className={cn(asChild ? undefined : buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {children}
+    </Comp>
   )
 }
 

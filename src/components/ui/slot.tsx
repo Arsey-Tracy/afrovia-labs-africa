@@ -9,8 +9,8 @@ interface SlotProps extends React.HTMLAttributes<HTMLElement> {
 const Slot = React.forwardRef<HTMLElement, SlotProps>(
   ({ asChild, children, className, ...props }, ref) => {
     if (asChild) {
-      const Child = React.Children.only(children) as React.ReactElement<Record<string, unknown>>
-      const childProps = Child.props as Record<string, unknown>
+      const Child = React.Children.only(children) as React.ReactElement<{ className?: string }>
+      const childProps = Child.props as { className?: string }
 
       const mergedProps = {
         ...props,
@@ -23,7 +23,7 @@ const Slot = React.forwardRef<HTMLElement, SlotProps>(
     }
 
     return (
-      <div ref={ref} className={className} {...props}>
+      <div ref={ref as React.Ref<HTMLDivElement>} className={className} {...props}>
         {children}
       </div>
     )
