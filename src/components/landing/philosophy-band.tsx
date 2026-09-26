@@ -38,15 +38,9 @@ export function PhilosophyBand(){
             viewport={{ once: true, margin: "-60px" }}
             variants={containerVariants}
         >
-<<<<<<< HEAD
-            <div className="mx-auto max-w-7xl">
-              <motion.p variants={itemVariants} className="max-w-3xl font-display text-3xl font-medium leading-tight md:text-4xl">
-                Technology should meet learners where they are, and help them go further.
-=======
             <div className="mx-auto max-w-6xl">
                 <motion.p variants={itemVariants} className="max-w-lg font-display text-2xl font-medium leading-snug">
                     Access is not a feature. It is the foundation for better outcomes.
->>>>>>> a380728c0ab4bb74460f68bccdb32e2c6f5b782c
                 </motion.p>
               <ul className="mt-10 grid gap-x-8 gap-y-6 text-sm text-white/75 sm:grid-cols-2 lg:grid-cols-4">
                     {principles.map((p)=>(

@@ -1,19 +1,13 @@
 "use client"
 
 import Link from "next/link";
-<<<<<<< HEAD
-import { ArrowRight, ChevronDown, GraduationCap, Menu } from "lucide-react"
-import { buttonVariants } from "../ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { cn } from "@/lib/utils";
-=======
 import Image from "next/image";
 import { ArrowRight, Menu } from "lucide-react"
-import { Button } from "../ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "../ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { motion } from "motion/react";
->>>>>>> a380728c0ab4bb74460f68bccdb32e2c6f5b782c
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "../ui/button";
 
 const solutions = [
     { title: "AI Learning Assistant", href: "/solutions/ai-learning-assistant" },
@@ -21,6 +15,12 @@ const solutions = [
     { title: "Virtual Science Labs", href: "/solutions/virtual-science-labs" },
     { title: "Simulators", href: "/solutions/simulators" },
     { title: "Digital Library", href: "/solutions/digital-library" },
+]
+
+const about = [
+    { title: "Our Story", href: "/about/story" },
+    { title: "Team", href: "/about/team" },
+    { title: "Careers", href: "/about/careers" },
 ]
 
 const navLinks = [
@@ -34,44 +34,6 @@ const navLinks = [
 
 export function Navbar() {
     return (
-<<<<<<< HEAD
-        <header className="sticky top-0 z-50 w-full border-b border-black-900/60 bg-white/95 backdrop-blur-md">
-            <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-6 px-5 md:px-8">
-                <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="AfroviaLabs home">
-                    <span className="flex size-10 items-center justify-center rounded-md bg-sea-green text-white">
-                        <GraduationCap className="size-5" aria-hidden="true" />
-                    </span>
-                    <span className="text-lg font-semibold text-black">
-                        Afrovia<span className="text-sea-green">Labs</span>
-                    </span>
-                </Link>
-
-                <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
-                    {navLinks.slice(0, 2).map((link) => (
-                        <Link key={link.href} href={link.href} className="text-sm font-medium text-black-700 transition-colors hover:text-sea-green">
-                            {link.label}
-                        </Link>
-                    ))}
-                    <details className="group relative">
-                        <summary className="flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-black-700 hover:text-sea-green">
-                            Solutions <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
-                        </summary>
-                        <ul className="absolute left-0 top-full z-20 mt-4 flex w-72 flex-col rounded-md border border-black-900 bg-white p-2 shadow-xl group-open:animate-in group-open:fade-in">
-                            {solutions.map((solution) => (
-                                <li key={solution.href}>
-                                    <Link href={solution.href} className="block rounded px-3 py-2.5 text-sm text-black-700 hover:bg-light-green-900 hover:text-sea-green-100">
-                                        {solution.title}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </details>
-                    {navLinks.slice(2).map((link) => (
-                        <Link key={link.href} href={link.href} className="text-sm font-medium text-black-700 transition-colors hover:text-sea-green">
-                            {link.label}
-                        </Link>
-                    ))}
-=======
         <motion.header
             className="sticky top-0 z-50 w-full border-b border-forest/15 bg-paper"
             initial={{ y: -20, opacity: 0 }}
@@ -106,7 +68,7 @@ export function Navbar() {
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="grid w-64 gap-1 p-3">
-                                        {solutions.map((s)=>(
+                                        {solutions.map((s) => (
                                             <li key={s.href}>
                                                 <NavigationMenuLink asChild>
                                                     <Link href={s.href} className="block border-l-2 border-transparent px-3 py-2 text-sm text-foreground/80 hover:border-ember hover:bg-accent">
@@ -130,7 +92,7 @@ export function Navbar() {
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="grid w-64 gap-1 p-3">
-                                        {about.map((a)=>(
+                                        {about.map((a) => (
                                             <li key={a.href}>
                                                 <NavigationMenuLink asChild>
                                                     <Link href={a.href} className="block border-l-2 border-transparent px-3 py-2 text-sm text-foreground/80 hover:border-ember hover:bg-accent">
@@ -146,7 +108,6 @@ export function Navbar() {
                     </NavigationMenu>
                     <Link href="/resources" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">Resources</Link>
                     <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">Get in Touch</Link>
->>>>>>> a380728c0ab4bb74460f68bccdb32e2c6f5b782c
                 </nav>
 
                 <div className="flex items-center gap-3">
@@ -167,11 +128,7 @@ export function Navbar() {
                                     <Link
                                         key={link.href}
                                         href={link.href}
-<<<<<<< HEAD
-                                        className="flex items-center rounded px-3 py-3 text-base font-medium text-black hover:bg-light-green-900"
-=======
                                         className="flex items-center border-l-2 border-transparent px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-ember hover:bg-accent"
->>>>>>> a380728c0ab4bb74460f68bccdb32e2c6f5b782c
                                     >
                                         {link.label}
                                     </Link>
@@ -200,6 +157,6 @@ export function Navbar() {
                     </Sheet>
                 </div>
             </div>
-        </header>
+        </motion.header>
     );
 }

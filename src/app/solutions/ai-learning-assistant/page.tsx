@@ -1,3 +1,5 @@
+"use client"
+
 import { MarketingPage } from "@/components/landing/marketing-page";
 
 export default function AILearningAssistantPage() {

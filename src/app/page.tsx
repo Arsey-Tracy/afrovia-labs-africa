@@ -1,3 +1,5 @@
+"use client"
+
 import { CTASection } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 import { Hero } from "@/components/landing/hero";

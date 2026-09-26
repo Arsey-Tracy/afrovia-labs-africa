@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       sectionTitle="Progress is built in partnership."
       sectionCopy="Digital education works best when it responds to local needs. We work toward practical deployments that support educators, learners and the wider school community."
       points={["Technology selected for real education needs", "Partnerships that bring schools and communities together", "A focus on access, usability and lasting value"]}
-      related={[{ label: "Explore our products", href: "/products" }, { label: "Get in touch", href: "/contact" }]}
+      related={[{ label: "Explore our products", href: "/products" }, { label: "Get in Touch", href: "/contact" }]}
     />
   );
 }

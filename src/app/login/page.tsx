@@ -17,7 +17,7 @@ export default function LoginPage() {
           Afrovia<span className="-ml-2 text-sea-green">Labs</span>
         </Link>
       </div>
-      <section className="mx-auto mt-8 grid max-w-6xl overflow-hidden rounded-md border border-black-900/50 bg-white shadow-sm md:mt-12 md:min-h-[600px] md:grid-cols-2">
+      <section className="mx-auto mt-8 grid max-w-6xl overflow-hidden rounded-md border border-black-900/50 bg-white shadow-sm md:mt-12 md:min-h-150 md:grid-cols-2">
         <div className="relative min-h-60 overflow-hidden bg-sea-green-100 md:min-h-full">
           <Image src="/images/students-learning-tablet.png" alt="Students learning together" fill sizes="(max-width: 768px) 100vw, 50vw" loading="eager" className="object-cover" />
           <div className="absolute inset-0 bg-linear-to-t from-sea-green-100/95 via-sea-green-100/30 to-transparent" />

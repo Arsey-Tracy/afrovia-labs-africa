@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -41,7 +42,7 @@ export function MarketingPage({
                 Talk with our team <ArrowRight className="ml-2 size-4" />
               </Link>
             </div>
-            <div className="relative aspect-[5/4] overflow-hidden rounded-md bg-light-green-900">
+            <div className="relative aspect-5/4 overflow-hidden rounded-md bg-light-green-900">
               <Image src={image} alt={imageAlt} fill sizes="(max-width: 768px) 100vw, 48vw" className="object-cover" />
             </div>
           </div>
